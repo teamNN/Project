@@ -1,0 +1,52 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+.ic-search {
+    color: #000000;
+}
+
+.ic-user {
+    color: #000000;
+}
+
+.form-control {
+    width: 50%;
+}
+
+/* =================Container-News =============================*/
+.change-a a {
+    text-decoration: none;
+    color: black;
+}
+
+.img-news {
+    width: 380px;
+    height: 240px;
+}
+
+.container {
+    padding: 0;
+}
+
+.part-2 {
+    width: 104%;
+}
+
+.img-news-part3 {
+    width: 250px;
+    height: 180px;
+}
+
+.part-padding {
+    padding-bottom: 20px;
+}
+
+    .part-padding a {
+        list-style: none;
+    }
+
+    .part-padding .each-type {
+        border-left: 2px solid black;
+    }
