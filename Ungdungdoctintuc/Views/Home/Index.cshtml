@@ -1,5 +1,10 @@
-﻿@{
+﻿@using Ungdungdoctintuc.Models
+@model List<Tin>
+
+
+@{
     ViewBag.Title = "Home Page";
+    var urlhinh = (string)ViewBag.UrlHinh;
 }
 
 <div class="container pt-5 change-a">
@@ -8,27 +13,26 @@
         <div class="col-sm-12">
             <div class="row">
 
-            <div class="col-sm-4">
-                    <a href="#"><img src="~/img/img-news.png" class="img-news" alt="tintuc"></a>
-                </div>
-                <div class="col-sm-8 px-5 bg-light">
-                    <a href="#" class="link-news">
-                        <h4>
-                            Chiến thắng này sẽ tạo bước đà tâm lý rất tốt cho GAM trước khi bước vào mùa giải VCS Hè
-                            2020 đầy khó khăn phía trước.</h4>
-                    </a>
 
-                    <p>
-                        Bà Hoàng Thị Thành (cựu Chủ tịch Hội Nông dân huyện Quỳnh Nhai) khai khi không nói rõ số điểm
-                        cần nâng mà chỉ yêu cầu để đỗ vào trường công an.
-                    </p>
-                    <p>
-                        rong phiên xét hỏi chiều 23/5, bị cáo Hoàng Thị Thành cho biết sau khi suy nghĩ rất nhiều cho
-                        con về kỳ thi THPT 2018 đã trao đổi với Cầm Thị Bun Sọn (cựu phó trưởng phòng Chính trị Tư
-                        tưởng, Sở Giáo dục và Đào tạo Sơn La) vì từng là bạn học. Bà Thành nhờ nâng điểm cho con
-                        trai đỗ đại học, vì đã một năm thi trượt.
-                    </p>
-                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-4">
+                       @Html.Action("LayUrl", "Home", new { id = item.IdTin })
+                    </div>
+                    <div class="col-sm-8 px-5 bg-light">
+                        <a href="#" class="link-news">
+                            <h4>
+                                @item.TieuDe
+                            </h4>
+                        </a>
+
+                        <p>
+                            @item.TomTat
+                        </p>
+
+                    </div>
+                }
+
             </div>
         </div>
     </div>

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Ungdungdoctintuc.Models.TheLoai>
+
+    <ul class="navbar-nav">
+
+        @foreach (var item in Model)
+        {
+            <li class="nav-item"><a class="nav-link" href="@Url.Action("ChuyenMuc", "Home", new { id = item.IdTheLoai })"><b>@item.TenLoai</b></a></li>
+            
+          
+            @*<li class="nav-item "><a class="nav-link" href="#"><b>PC/Consolle</b></a></li>*@
+        }
+
+    </ul>
