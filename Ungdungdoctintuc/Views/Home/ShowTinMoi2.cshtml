@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Ungdungdoctintuc.Models.Tin>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 pt-1 px-1" style="float: left;">
+        <div class="px-5 bg-light">
+            <a href="#">
+                <h6>@item.TieuDe</h6>
+            </a>
+            <p>
+                @item.TomTat
+            </p>
+        </div>
+    </div>
+}
+

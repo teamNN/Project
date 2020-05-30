@@ -43,10 +43,10 @@
     padding-bottom: 20px;
 }
 
-    .part-padding a {
+.part-padding a {
         list-style: none;
     }
 
-    .part-padding .each-type {
+.part-padding .each-type {
         border-left: 2px solid black;
-    }
+}
