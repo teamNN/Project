@@ -16,21 +16,22 @@
 
 
         <div class="header">
-            <div class="container">
+            <div class="container" >
                 <div class="row bg-light">
-                    <div class="col-sm-8">
+                    <div class="col-sm-8" >
 
-                        <nav class="navbar navbar-expand-sm  navbar-light">
+                        <nav class="navbar navbar-expand-sm navbar-light badge-warning">
 
-                            <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                            <a class="navbar-brand navbar-light badge-warning " href="@Url.Action("Index","Home")" >
                                 <img src="~/img/logo.png" alt="Logo" style="width:50px;">
                             </a>
 
                             @Html.Action("NavHeader", "Home")
+                            </nav>
                     </div>
 
 
-                    <div class="col-sm-3 pt-2">
+                    <div class="col-sm-3 pt-2 navbar navbar-expand-sm navbar-light badge-warning">
                         <form class="form-inline" action="/action_page.php" style="float:right;">
 
                             <div class="row">
@@ -51,7 +52,6 @@
 
                 </div>
 
-                </nav>
             </div>
         </div>
 
