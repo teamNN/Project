@@ -26,9 +26,9 @@ namespace Ungdungdoctintuc.Controllers
         {
             var tinmoi = LayTinNew(4);
             //bỏ 1 tin đầu
-           // var tinmoi2 = tinmoi.Skip(1);
-
-            return PartialView(tinmoi);
+            // var tinmoi2 = tinmoi.Skip(1);
+            var tinmoi2 = tinmoi.Skip(1);
+            return PartialView(tinmoi2);
         }
 
         //Show tin theo chuyen muc GO
@@ -94,6 +94,14 @@ namespace Ungdungdoctintuc.Controllers
             var urlHinh = data.Urls.Where(m => m.IdTin == id).SingleOrDefault();
             return PartialView(urlHinh);
         }
+
+        //khác view
+        public ActionResult LayUrl2(int id)
+        {
+            var urlHinh = data.Urls.Where(m => m.IdTin == id).SingleOrDefault();
+            return PartialView(urlHinh);
+        }
+
 
         //hàm click vào xem nội dung chi tiết tin tức theo id của tin đó
         public ActionResult Details(int id)

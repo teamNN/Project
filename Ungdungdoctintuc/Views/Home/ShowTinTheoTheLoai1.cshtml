@@ -9,12 +9,11 @@
         <div class="row">
             <div class="col-sm-5" style="float: left;">
                 <a href="#">
-                    <img src="~/img/img-news.png" class="img-news-part3"
-                         alt="tintuc">
+                    @Html.Action("LayUrl2","Home",new { id=item.IdTin})
                 </a>
             </div>
             <div class="col-sm-7 px-4" style="float: left;">
-                <a href="#">
+                <a href="@Url.Action("Details","Home",new { id=item.IdTin})">
                     <h5>@item.TieuDe</h5>
                 </a>
 
