@@ -3,6 +3,13 @@
     margin: 0;
 }
 
+body{
+    /*background-image: url(../img/bgmb.jpg);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .ic-search {
     color: #000000;
 }
@@ -50,3 +57,133 @@
 .part-padding .each-type {
         border-left: 2px solid black;
 }
+/*sdfsdfsef*/
+
+
+
+#menu-top {
+    margin-bottom: 20px;
+}
+
+bg-categories {
+    background-image: url(../img/bgmb.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+.bg-img {
+    background-image: url(images/kaisa.jpg);
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-family: tahoma;
+    font-size: 20px;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+.new-post-title {
+    width: 100%;
+    height: 20px;
+    border-bottom: 2px solid;
+    border-color: #BBBBBB;
+}
+
+    .new-post-title h2 {
+        text-decoration: none;
+        color: #E74C3C;
+        font-weight: bold;
+        font-size: 20px;
+        text-transform: uppercase;
+        background-color: white;
+        display: inline-block;
+        position: relative;
+        top: 6px;
+        border-left: 10px solid;
+        border-left-color: #E74C3C;
+        padding: 0 15px;
+    }
+
+.new-post-content {
+    margin-top: 30px;
+    color: black;
+}
+
+.list {
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: 1px dashed;
+    border-color: #BBBBBB;
+}
+
+.list-content {
+    float: left;
+    display: block;
+    margin-bottom: 20px;
+}
+
+    .list-content img {
+        width: 250px;
+        height: 200px;
+    }
+
+    .list-content content {
+        float: left;
+        width: 300px;
+        height: 150px;
+    }
+
+.list-content-img {
+    width: 250px;
+    height: 150px;
+    float: left;
+}
+
+.list-content-title {
+    width: 480px;
+    height: 200px;
+    float: left;
+    padding-left: 10px;
+    background-color: #E8E8E8;
+}
+
+    .list-content-title h2 {
+        font-weight: bold;
+    }
+
+    .list-content-title p {
+        font-size: 15px;
+        color: #808080;
+    }
+
+.container {
+    background-color: white;
+}
+/*#myList li{ display:none;
+}*/
+#loadMore {
+    color: green;
+    cursor: pointer;
+}
+
+    #loadMore:hover {
+        color: black;
+    }
+
+#showLess {
+    color: red;
+    cursor: pointer;
+}
+
+    #showLess:hover {
+        color: black;
+    }

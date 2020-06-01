@@ -143,10 +143,18 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery\jquery-3.5.1.js" />
+    <Content Include="Content\jquery\jquery.timeago.js" />
+    <Content Include="Content\js\jquery.timeago.js" />
+    <Content Include="Content\js\script.js" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\bgmb.jpg" />
+    <Content Include="img\hehe.png" />
+    <Content Include="img\hoang.jpg" />
+    <Content Include="img\kaisa.jpg" />
     <Content Include="img\lmhttc.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -274,10 +282,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutCategories.cshtml" />
     <Content Include="Views\Home\NavHeader.cshtml" />
-    <Content Include="Views\Home\ChuyenMuc.cshtml" />
-    <Content Include="Views\Home\LayUrl.cshtml" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.5.1.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -296,7 +301,7 @@
     <Content Include="Views\Home\ShowTinTheoTheLoai3.cshtml" />
     <Content Include="Views\Home\ShowTinTheoTheLoai4.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\LayUrl2.cshtml" />
+    <Content Include="Views\Home\ChuyenMuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

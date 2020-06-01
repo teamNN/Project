@@ -1,22 +1,147 @@
-﻿@using Ungdungdoctintuc.Models
-@model List<ChuyenMuc>
+﻿
 @{
     ViewBag.Title = "ChuyenMuc";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="bg-categories">
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <ul class="navbar-nav">
+            @foreach (var item in Model)
+            {
+                <li class="nav-item"><a class="nav-link text-light" href="categories.html" style="margin:auto"><b> @item.TenChuyenMuc</b></a></li>
+            }
+        </ul>
+    </nav>
 
- <nav class="navbar navbar-expand-sm bg-dark">
-     <ul class="navbar-nav">
-         @foreach (var item in Model)
-         {
-             <li class="nav-item"><a class="nav-link text-light" href="categories.html" style="margin:auto"><b> @item.TenChuyenMuc</b></a></li>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="new-post-title">
+                    <h2>bài viết mới</h2>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="new-post-title">
+                    <h2>video mới</h2>
+                </div>
+            </div>
+        </div>
+        <div class="new-post-content">
+            <div class="row">
 
-             @*<li class="nav-item "><a class="nav-link" href="#"><b>PC/Consolle</b></a></li>*@
-         }
-     </ul>
- </nav>
+                <div class="col-sm-4">
+
+                    <a href="#"><img src="~/img/hoang.jpg" width="100%" height="250px"></a>
+                    <a href="#">Ước mơ trở thành game thủ chuyên nghiệp của nam sinh viên CNTT</a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#"><img src="~/img/hoang.jpg" width="100%" height="250px"></a>
+                    <a href="#">Nam sinh trầm cảm vì áp lực học ở trường đại học công nghệ</a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#"><img src="~/img/hoang.jpg" width="100%" height="250px"></a>
+                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione reprehenderit sunt cum</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="list">
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <ul id="myList">
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                    <!-- <span class="timeago" title="5/21/2020 12:00:00 AM"></span> -->
+                                    <time class="timeago" datetime="2020-05-30T13:35:17Z" title="30 tháng 5 2020">30 tháng 5 2020</time>
+
+                                </div>
+                            </li>
+                        </div>
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="list-content">
+                            <li>
+                                <div class="list-content-img">
+                                    <img src="~/img/kaisa.jpg">
+                                </div>
+                                <div class="list-content-title">
+                                    <h2>Đây là tiêu đề của bài viết blah blah blah</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat reprehenderit veritatis quos, totam officia dolorem voluptatibus ex debitis, aliquam magni! Et illum veniam aliquid, minus sequi. Iste, ipsam, autem!</p>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h1>Hello</h1>
+                    <p class="totop">
+                        <a class="btn-btn-info" href="#top">Back to top</a>
+                    </p>
+                </div>
 
 
 
-
-
+            </div>
+        </div>
+    </div>
+</div>

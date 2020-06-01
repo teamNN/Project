@@ -83,24 +83,6 @@ namespace Ungdungdoctintuc.Controllers
             return PartialView(All_Theloai);
         }
 
-        public ActionResult ChuyenMuc(int id)
-        {
-            var chuyenmuc = data.ChuyenMucs.Where(m => m.IdTheLoai==id).ToList();
-            return View(chuyenmuc);
-        }
-
-        public ActionResult LayUrl(int id)
-        {
-            var urlHinh = data.Urls.Where(m => m.IdTin == id).SingleOrDefault();
-            return PartialView(urlHinh);
-        }
-
-        //khác view
-        public ActionResult LayUrl2(int id)
-        {
-            var urlHinh = data.Urls.Where(m => m.IdTin == id).SingleOrDefault();
-            return PartialView(urlHinh);
-        }
 
 
         //hàm click vào xem nội dung chi tiết tin tức theo id của tin đó
@@ -109,9 +91,14 @@ namespace Ungdungdoctintuc.Controllers
             var tin = from t in data.Tins where t.IdTin == id select t;
             return View(tin.Single());
         }
-          
 
-    
+        public ActionResult ChuyenMuc(int id)
+        {
+            var chuyenmuc = data.ChuyenMucs.Where(m => m.IdTheLoai == id).ToList();
+
+            return View(chuyenmuc);
+        }
+
 
     }
 }

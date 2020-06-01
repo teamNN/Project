@@ -21,7 +21,7 @@
                     {
 
                         <div class="col-sm-4 ">
-                            @Html.Action("LayUrl", "Home", new { id = item.IdTin })
+                            <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news"/>
                         </div>
                         <div class="col-sm-8 px-2 bg-light">
                             <a href="@Url.Action("Details","Home",new { id=item.IdTin})" class="link-news">
@@ -53,8 +53,6 @@
             </div>
 
         
-
-
         <!-- phần 3 -->
         <div class="part-padding change-a">
             <div class="row p-2" style="background-color: #e74c3c;">
