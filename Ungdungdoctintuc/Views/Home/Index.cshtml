@@ -7,21 +7,21 @@
     var urlhinh = (string)ViewBag.UrlHinh;
 }
 
-    <div class="container pt-5 change-a">
-        <!-- phần 1 -->
-        <h3>
-            Tin mới
-        </h3>
+<div class="container pt-5 change-a">
+    <!-- phần 1 -->
+    <h3>
+        Tin mới
+    </h3>
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-
-
                     @foreach (var item in Model)
                     {
-
                         <div class="col-sm-4 ">
-                            <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news"/>
+                            <a href="#">
+                                <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news" />
+                            </a>
                         </div>
                         <div class="col-sm-8 px-2 bg-light">
                             <a href="@Url.Action("Details","Home",new { id=item.IdTin})" class="link-news">
@@ -32,28 +32,28 @@
                             <p>
                                @Html.Raw(@item.TomTat)
                             </p>
-
                         </div>
-
                     }
-
                 </div>
             </div>
         </div>
-        <!-- phần 2 -->
-       
-            <div class="row part-2">
-                <div class="col-sm-12">
-                    <div class="row">
-                        @Html.Action("ShowTinMoi2", "Home")
-                    </div>
+    </div>
 
+    <!-- phần 2 -->
+    <div class="container">
+        <div class="row part-2">
+            <div class="col-sm-12">
+                <div class="row">
+                    @Html.Action("ShowTinMoi2", "Home")
                 </div>
 
             </div>
 
-        
-        <!-- phần 3 -->
+        </div>
+    </div>
+
+    <!-- phần 3 -->
+    <div class="container">
         <div class="part-padding change-a">
             <div class="row p-2" style="background-color: #e74c3c;">
                 <a href="#">
@@ -65,8 +65,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- phần 4 -->
+    <!-- phần 4 -->
+    <div class="container">
         <div class="part-padding change-a">
             <div class="row p-2" style="background-color: #e74c3c;">
                 <a href="#">
@@ -78,8 +80,12 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- phần 5 -->
+
+    <!-- phần 5 -->
+
+    <div class="container">
         <div class="part-padding change-a">
             <div class="row p-2" style="background-color: #e74c3c;">
                 <a href="#">
@@ -91,8 +97,11 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- phần 6 -->
+
+    <!-- phần 6 -->
+    <div class="container">
         <div class="part-padding change-a">
             <div class="row p-2" style="background-color: #e74c3c;">
                 <a href="#">
@@ -105,4 +114,6 @@
             </div>
         </div>
     </div>
+</div>
+
 
