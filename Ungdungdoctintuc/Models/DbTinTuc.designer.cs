@@ -54,7 +54,7 @@ namespace Ungdungdoctintuc.Models
     #endregion
 		
 		public DbTinTucDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["WebsiteTinTucConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["WebsiteTinTucConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
