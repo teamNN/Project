@@ -8,12 +8,14 @@ using Ungdungdoctintuc.Models;
 
 namespace Ungdungdoctintuc.Controllers
 {
-
-    
     public class HomeController : Controller
     {
 
         DbTinTucDataContext data = new DbTinTucDataContext();
+
+        public object Chuyenmucs { get; private set; }
+        public object Tins { get; private set; }
+
         public ActionResult Index()
         {
             var tinmoi = LayTinNew(1);
@@ -34,7 +36,7 @@ namespace Ungdungdoctintuc.Controllers
         //Show tin theo chuyen muc GO
         public ActionResult ShowTinTheoTheLoai1()
         {
-            List<Tin> tins= tins = LayTinTheLoai(1);          
+            List<Tin> tins = tins = LayTinTheLoai(1);
             return PartialView(tins);
         }
         //Show tin theo chuyen muc Game OFFline
@@ -92,13 +94,40 @@ namespace Ungdungdoctintuc.Controllers
             return View(tin.Single());
         }
 
-        //CODE CATEGORIES
+        //CODE CATEGORY
+
+        public List<Tin> LayTinTheoTheLoai(int id)
+        {
+            var category = (from a in data.ChuyenMucs
+                            join b in data.Tins on a.IdChuyenMuc equals b.IdChuyenMuc
+                            join c in data.TheLoais on a.IdTheLoai equals c.IdTheLoai
+                            where a.IdTheLoai == id
+                            select b).ToList();
+            return category;
+        }
 
         public ActionResult ChuyenMuc(int id)
         {
             var chuyenmuc = data.ChuyenMucs.Where(m => m.IdTheLoai == id).ToList();
 
             return View(chuyenmuc);
+        }
+
+
+        public ActionResult ShowPart1Category1(int id)
+        {
+
+            var category = LayTinTheoTheLoai(id);              
+            var category2 = category.OrderByDescending(m => m.NgayDang).Take(2).ToList();
+            return PartialView(category2);
+        }
+
+        public ActionResult ShowPart2Category2(int id)
+        {
+            var category = LayTinTheoTheLoai(id);
+            var category2= category.OrderByDescending(m => m.NgayDang).Take(50).ToList();
+            var category3 = category2.Skip(2);
+            return PartialView(category3);
         }
 
 
