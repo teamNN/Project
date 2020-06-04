@@ -8,6 +8,8 @@
     <link href="~/Content/StyleSheet.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tin tức</title>
+    <meta property=”fb:app_id” content=”256850085554759” />
+
 </head>
 
 <body>
@@ -55,6 +57,7 @@
 
         <div>
             @RenderBody()
+
         </div>
         <div class="card-footer" style="height:300px">
 
@@ -67,6 +70,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=1041545489574597&autoLogAppEvents=1"></script>
+        <!-- Your embedded comments code -->
+        @*<div class="fb-comment-embed"
+        data-href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185"
+        data-width="500"></div>*@
+
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=256850085554759&autoLogAppEvents=1"></script>
 
         <script src="~/Content/js/script.js"></script>
         <script src="~/Content/js/jquery.timeago.js"></script>

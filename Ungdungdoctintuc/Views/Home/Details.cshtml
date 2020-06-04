@@ -4,10 +4,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2></h2>
-<h3 style="text-align:center">@Model.TieuDe </h3>
-<div>
-    <p style="text-align:justify"><span style="font-weight:bold"></span>@Html.Raw(@Model.NoiDung)</p>
-</div>
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=YOUR_APP_ID";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <h2></h2>
+    <h3 style="text-align:center">@Model.TieuDe </h3>
+    <div>
+        <p style="text-align:justify"><span style="font-weight:bold"></span>@Html.Raw(@Model.NoiDung)</p>
+
+    </div>
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
+    
 
 
