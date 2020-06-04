@@ -92,6 +92,8 @@ namespace Ungdungdoctintuc.Controllers
             return View(tin.Single());
         }
 
+        //CODE CATEGORIES
+
         public ActionResult ChuyenMuc(int id)
         {
             var chuyenmuc = data.ChuyenMucs.Where(m => m.IdTheLoai == id).ToList();

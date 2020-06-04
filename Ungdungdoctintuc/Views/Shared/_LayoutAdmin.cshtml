@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/StyleSheet.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Tin tức</title>
+    </head>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="container">
+                <div class="row bg-info">
+                    <div class="col-sm-8">
+                        <nav class="navbar navbar-expand-sm navbar-light bg-info">
+                            <a class="navbar-brand navbar-light " href="@Url.Action("Index","Home")">
+                                <img src="~/img/logo.png" alt="Logo" style="width:50px;">
+                            </a>
+                            @Html.Action("NavHeader", "Home")
+                        </nav>
+                    </div>
+                    <div class="col-sm-3 pt-2 navbar navbar-expand-sm navbar-light">
+                        <form class="form-inline" action="/action_page.php" style="float:right;">
+
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm">
+                                </div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 mt-2  p-0">
+                        <a href="#" class="ic-user btn btn-outline-dark"><i class="fa fa-user"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        @RenderBody()
+    </div>
+
+
+    <div class="card-footer" style="height:300px">
+
+    </div>
+
+
+
+    <script src="~/Content/js/script.js"></script>
+    <script src="~/Content/js/jquery.timeago.js"></script>
+    <script src="~/Content/jquery/jquery-3.5.1.js"></script>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            CKEDITOR.replace('NoiDung');
+            CKEDITOR.replace('TomTat');
+
+            $('#btn_select').on('click', function () {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (url) {
+                    $('#txtImage').val(url);
+                };
+                finder.popup();
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

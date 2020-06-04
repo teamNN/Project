@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WebsiteTinTuc" Class="DbTinTucDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-IOJHOA9;Initial Catalog=WebsiteTinTuc;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WebsiteTinTucConnectionString2" Provider="System.Data.SqlClient" />
+
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-AAMU6EJ;Initial Catalog=WebsiteTinTuc;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WebsiteTinTucConnectionString" Provider="System.Data.SqlClient" />
+
+
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="IdAdmin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
