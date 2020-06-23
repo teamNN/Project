@@ -54,13 +54,12 @@ body{
         list-style: none;
     }
 
-.part-padding .each-type {
-        border-left: 2px solid black;
+
+.title-design{
+    font-weight:bold;
+    font-size:20px;
 }
 /*sdfsdfsef*/
-
-
-
 #menu-top {
     margin-bottom: 20px;
 }
