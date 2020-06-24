@@ -1,0 +1,85 @@
+﻿@*@model IEnumerable<Ungdungdoctintuc.Models.Tin>*@
+@using Ungdungdoctintuc.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Ungdungdoctintuc.Models.Tin>
+
+@{
+    ViewBag.Title = "Tintuc";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Tintuc</h2>
+
+<p>
+    @Html.ActionLink("Create", "ThemMoiTin")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().IdTin)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UrlAnhBia)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().TieuDe)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.TomTat)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().NgayDang)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.TacGia)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdChuyenMuc)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.UrlAnhBia)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuDe)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.TomTat)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDang)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.TacGia)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdTin }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdTin }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdTin })
+        </td>
+    </tr>
+}
+
+</table>
+
+Trang @(Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model,page => Url.Action("Tintuc",new { page=page}))
+
+</div>
+<style>
+    .MenuTrang li{
+        display:inline;
+    }
+</style>
+
