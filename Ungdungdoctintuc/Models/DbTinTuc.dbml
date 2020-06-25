@@ -31,6 +31,7 @@
       <Column Name="IdDocGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Displayname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="DocGia_BinhLuan" Member="BinhLuans" ThisKey="IdDocGia" OtherKey="IdDocGia" Type="BinhLuan" />
       <Association Name="DocGia_Vote" Member="Votes" ThisKey="IdDocGia" OtherKey="IdDocGia" Type="Vote" />
     </Type>

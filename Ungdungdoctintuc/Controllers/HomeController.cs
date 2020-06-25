@@ -11,7 +11,7 @@ namespace Ungdungdoctintuc.Controllers
     public class HomeController : Controller
     {
 
-        DbTinTucDataContext data = new DbTinTucDataContext();
+       readonly DbTinTucDataContext data = new DbTinTucDataContext();
 
         public object Chuyenmucs { get; private set; }
         public object Tins { get; private set; }
@@ -36,25 +36,25 @@ namespace Ungdungdoctintuc.Controllers
         //Show tin theo chuyen muc GO
         public ActionResult ShowTinTheoTheLoai1()
         {
-            List<Tin> tins = tins = LayTinTheLoai(1);
+            List<Tin> tins  = LayTinTheLoai(1);
             return PartialView(tins);
         }
         //Show tin theo chuyen muc Game OFFline
         public ActionResult ShowTinTheoTheLoai2()
         {
-            List<Tin> tins = tins = LayTinTheLoai(2);
+            List<Tin> tins = LayTinTheLoai(2);
             return PartialView(tins);
         }
         //Show tin theo chuyen muc PC
         public ActionResult ShowTinTheoTheLoai3()
         {
-            List<Tin> tins = tins = LayTinTheLoai(3);
+            List<Tin> tins  = LayTinTheLoai(3);
             return PartialView(tins);
         }
         //Show tin theo chuyen muc Esport
         public ActionResult ShowTinTheoTheLoai4()
         {
-            List<Tin> tins = tins = LayTinTheLoai(4);
+            List<Tin> tins  = LayTinTheLoai(4);
             return PartialView(tins);
         }
 
@@ -93,6 +93,8 @@ namespace Ungdungdoctintuc.Controllers
             var tin = from t in data.Tins where t.IdTin == id select t;
             return View(tin.Single());
         }
+
+
 
         //CODE CATEGORY
 

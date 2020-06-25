@@ -657,6 +657,8 @@ namespace Ungdungdoctintuc.Models
 		
 		private string _Password;
 		
+		private string _Displayname;
+		
 		private EntitySet<BinhLuan> _BinhLuans;
 		
 		private EntitySet<Vote> _Votes;
@@ -671,6 +673,8 @@ namespace Ungdungdoctintuc.Models
     partial void OnUsernameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
+    partial void OnDisplaynameChanging(string value);
+    partial void OnDisplaynameChanged();
     #endregion
 		
 		public DocGia()
@@ -736,6 +740,26 @@ namespace Ungdungdoctintuc.Models
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Displayname", DbType="NVarChar(20)")]
+		public string Displayname
+		{
+			get
+			{
+				return this._Displayname;
+			}
+			set
+			{
+				if ((this._Displayname != value))
+				{
+					this.OnDisplaynameChanging(value);
+					this.SendPropertyChanging();
+					this._Displayname = value;
+					this.SendPropertyChanged("Displayname");
+					this.OnDisplaynameChanged();
 				}
 			}
 		}
