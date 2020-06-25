@@ -13,10 +13,7 @@
 </head>
 
 <body>
-
     <div class="container">
-
-
         <div class="header">
             <div class="container">
                 <div class="row bg-info">
@@ -42,19 +39,13 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-sm-1 mt-2  p-0">
-                        <a href="#" class="ic-user btn btn-outline-dark"><i class="fa fa-user"></i></a>
+                    <div class="col-sm-1 mt-2  p-0" >
+                        <a href="@Url.Action("Login","User")" class="ic-user btn btn-outline-dark" ><i class="fa fa-user"></i></a>
                     </div>
 
                 </div>
             </div>
-
-
-
         </div>
-
-
-
         <div>
             @RenderBody()
 
@@ -79,10 +70,26 @@
 
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=256850085554759&autoLogAppEvents=1"></script>
+        <script src="~/Scripts/jquery-3.5.1.js"></script>
 
+        <script src="~/Content/js/jquery.timeago.js" type="text/javascript"></script>
+
+
+        <!-- Main js -->
         <script src="~/Content/js/script.js"></script>
-        <script src="~/Content/js/jquery.timeago.js"></script>
-        <script src="~/Content/jquery/jquery-3.5.1.js"></script>
+        @*<script src="js/script.js"></script>*@
+        @*<script src="bootstrap/js/bootstrap.min.js"></script>*@
+        <script src="~/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/bootstrap/js/popper.min.js"></script>
+
+        @*<script src="js/script.js"></script>*@
+        <script src="~/Content/js/script.js"></script>
+
+
+        <script src="~/Scripts/jquery-3.5.1.js"></script>
+
+        <script src="~/Content/js/jquery.timeago.js" type="text/javascript"></script>
+
     </div>
 
 </body>

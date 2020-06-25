@@ -392,3 +392,15 @@ D:\NGUYEN\websiteTin\Project\Ungdungdoctintuc\obj\Debug\Ungdungdoctintuc.csproj.
 D:\NGUYEN\websiteTin\Project\Ungdungdoctintuc\obj\Debug\Ungdungdoctintuc.csproj.CopyComplete
 D:\NGUYEN\websiteTin\Project\Ungdungdoctintuc\obj\Debug\Ungdungdoctintuc.dll
 D:\NGUYEN\websiteTin\Project\Ungdungdoctintuc\obj\Debug\Ungdungdoctintuc.pdb
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder.dll
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder_FileEditor.dll
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder_ImageResize.dll
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder_Watermark.dll
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\PagedList.dll
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\PagedList.Mvc.dll
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder.pdb
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder_FileEditor.pdb
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder_ImageResize.pdb
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\CKFinder_Watermark.pdb
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\PagedList.xml
+C:\Users\huynh\Desktop\Project\Ungdungdoctintuc\bin\PagedList.Mvc.xml

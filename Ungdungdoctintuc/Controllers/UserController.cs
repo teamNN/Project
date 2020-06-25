@@ -29,7 +29,9 @@ namespace Ungdungdoctintuc.Controllers
                 var userSession = new UserLogin();
                 userSession.UserName = user.Username;
                 userSession.UserId = user.IdDocGia;
-                Session.Add(CommonConstant.USER_SESSION, userSession);
+
+                Session["userId"] = user.IdDocGia;
+                Session["userName"] = user.Username;
 
                 return RedirectToAction("Index","Home");
             }
