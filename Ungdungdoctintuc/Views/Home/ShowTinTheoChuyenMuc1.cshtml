@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Ungdungdoctintuc.Models.Tin>
+
+
+
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-5" style="float: left;">
+                <a href="#">
+                    <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news-part3" />
+                </a>
+            </div>
+            <div class="col-sm-7 px-4" style="float: left;">
+                <a href="@Url.Action("Details","Home",new { id=item.IdTin})">
+                    <h5>@item.TieuDe</h5>
+                </a>
+
+                <p>
+                    @Html.Raw(@item.TomTat)
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+
+

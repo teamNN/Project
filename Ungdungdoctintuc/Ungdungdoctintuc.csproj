@@ -2990,6 +2990,7 @@
     <Content Include="Views\Admin\ThemMoiTin.cshtml" />
     <Content Include="Views\Home\ShowPart1Category1.cshtml" />
     <Content Include="Views\Home\ShowPart2Category2.cshtml" />
+    <Content Include="Views\Home\ShowTinTheoChuyenMuc1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

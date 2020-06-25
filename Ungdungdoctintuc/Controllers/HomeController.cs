@@ -57,7 +57,9 @@ namespace Ungdungdoctintuc.Controllers
             List<Tin> tins  = LayTinTheLoai(4);
             return PartialView(tins);
         }
+        //============================ laasy tin theo chuyen muc================
 
+       
         //Hàm lấy tin theo chuyen muc
 
         private List<Tin> LayTinTheLoai(int id)
@@ -72,6 +74,8 @@ namespace Ungdungdoctintuc.Controllers
             var tinOrderBy = tins.OrderByDescending(a => a.NgayDang).Take(2).ToList();
             return tinOrderBy;
         }
+
+    
 
         private List<Tin> LayTinNew(int count)
         {
@@ -106,6 +110,9 @@ namespace Ungdungdoctintuc.Controllers
             return category;
         }
 
+        // lay tin theo chuyen muc (moba/fps/.....)
+      
+
         public ActionResult ChuyenMuc(int id)
         {
             var chuyenmuc = data.ChuyenMucs.Where(m => m.IdTheLoai == id).ToList();
@@ -113,6 +120,7 @@ namespace Ungdungdoctintuc.Controllers
             return View(chuyenmuc);
         }
 
+     
 
         public ActionResult ShowPart1Category1(int id)
         {
