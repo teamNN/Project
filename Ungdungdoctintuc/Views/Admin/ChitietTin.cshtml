@@ -1,0 +1,75 @@
+﻿@model Ungdungdoctintuc.Models.Tin
+
+@{
+    ViewBag.Title = "ChitietTin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ChitietTin</h2>
+
+<div>
+    <h4>Tin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Id Chuyên Mục
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdChuyenMuc)
+        </dd>
+
+        <dt>
+            Đường Dẫn Ảnh Bìa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrlAnhBia)
+        </dd>
+
+        <dt>
+            Tiêu Đề
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            Tóm Tắt
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TomTat)
+        </dd>
+
+        <dt>
+           Nội Dung
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            Ngày Đăng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDang)
+        </dd>
+
+        <dt>
+            Tác Giả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TacGia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdTin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -657,6 +657,8 @@ namespace Ungdungdoctintuc.Models
 		
 		private string _Password;
 		
+		private string _Displayname;
+		
 		private EntitySet<BinhLuan> _BinhLuans;
 		
 		private EntitySet<Vote> _Votes;
@@ -671,6 +673,8 @@ namespace Ungdungdoctintuc.Models
     partial void OnUsernameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
+    partial void OnDisplaynameChanging(string value);
+    partial void OnDisplaynameChanged();
     #endregion
 		
 		public DocGia()
@@ -736,6 +740,26 @@ namespace Ungdungdoctintuc.Models
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Displayname", DbType="NVarChar(20)")]
+		public string Displayname
+		{
+			get
+			{
+				return this._Displayname;
+			}
+			set
+			{
+				if ((this._Displayname != value))
+				{
+					this.OnDisplaynameChanging(value);
+					this.SendPropertyChanging();
+					this._Displayname = value;
+					this.SendPropertyChanged("Displayname");
+					this.OnDisplaynameChanged();
 				}
 			}
 		}
@@ -937,6 +961,8 @@ namespace Ungdungdoctintuc.Models
 		
 		private string _UrlAnhBia;
 		
+		private string _UrlAnhNoiDung;
+		
 		private string _TieuDe;
 		
 		private string _TomTat;
@@ -963,6 +989,8 @@ namespace Ungdungdoctintuc.Models
     partial void OnIdChuyenMucChanged();
     partial void OnUrlAnhBiaChanging(string value);
     partial void OnUrlAnhBiaChanged();
+    partial void OnUrlAnhNoiDungChanging(string value);
+    partial void OnUrlAnhNoiDungChanged();
     partial void OnTieuDeChanging(string value);
     partial void OnTieuDeChanged();
     partial void OnTomTatChanging(string value);
@@ -1043,6 +1071,26 @@ namespace Ungdungdoctintuc.Models
 					this._UrlAnhBia = value;
 					this.SendPropertyChanged("UrlAnhBia");
 					this.OnUrlAnhBiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlAnhNoiDung", DbType="NVarChar(400)")]
+		public string UrlAnhNoiDung
+		{
+			get
+			{
+				return this._UrlAnhNoiDung;
+			}
+			set
+			{
+				if ((this._UrlAnhNoiDung != value))
+				{
+					this.OnUrlAnhNoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._UrlAnhNoiDung = value;
+					this.SendPropertyChanged("UrlAnhNoiDung");
+					this.OnUrlAnhNoiDungChanged();
 				}
 			}
 		}

@@ -2799,11 +2799,6 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Models\DbTinTuc.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DbTinTuc.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
     <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
@@ -2868,6 +2863,11 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Models\DbTinTuc.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DbTinTuc.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Models\DbTinTuc.dbml.layout">
       <DependentUpon>DbTinTuc.dbml</DependentUpon>
     </None>
@@ -2991,6 +2991,9 @@
     <Content Include="Views\Home\ShowPart1Category1.cshtml" />
     <Content Include="Views\Home\ShowPart2Category2.cshtml" />
     <Content Include="Views\Home\ShowTinTheoChuyenMuc1.cshtml" />
+    <Content Include="Views\Admin\ChitietTin.cshtml" />
+    <Content Include="Views\Admin\Xoatin.cshtml" />
+    <Content Include="Views\Admin\Suatin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

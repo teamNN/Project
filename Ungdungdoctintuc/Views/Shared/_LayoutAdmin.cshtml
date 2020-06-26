@@ -85,6 +85,15 @@
                 };
                 finder.popup();
             });
+
+            $('#btn_select2').on('click', function () {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (url) {
+                    $('#txtImage2').val(url);
+                };
+                finder.popup();
+            });
+
         });
 
     </script>

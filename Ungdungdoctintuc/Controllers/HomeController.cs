@@ -95,6 +95,10 @@ namespace Ungdungdoctintuc.Controllers
         public ActionResult Details(int id)
         {
             var tin = from t in data.Tins where t.IdTin == id select t;
+
+            var listCmt = data.BinhLuans.Where(x => x.IdTin == id).ToList();
+
+            ViewBag.Binhluan = listCmt;
             return View(tin.Single());
         }
 
@@ -137,6 +141,24 @@ namespace Ungdungdoctintuc.Controllers
             var category3 = category2.Skip(2);
             return PartialView(category3);
         }
+
+        // up cmt
+        [HttpPost]
+        public ActionResult PostComment(string noiDung,int idTin)
+        {
+            BinhLuan bl = new BinhLuan
+            {
+                IdTin = idTin,
+                NoiDung = noiDung,
+                IdDocGia = 1
+            };
+            data.BinhLuans.InsertOnSubmit(bl);
+            data.SubmitChanges();
+            return RedirectToAction("Details",new { id =bl.IdTin});
+        }
+
+
+
 
 
     }

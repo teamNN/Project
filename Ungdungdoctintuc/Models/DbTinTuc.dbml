@@ -31,6 +31,7 @@
       <Column Name="IdDocGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Displayname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="DocGia_BinhLuan" Member="BinhLuans" ThisKey="IdDocGia" OtherKey="IdDocGia" Type="BinhLuan" />
       <Association Name="DocGia_Vote" Member="Votes" ThisKey="IdDocGia" OtherKey="IdDocGia" Type="Vote" />
     </Type>
@@ -47,6 +48,7 @@
       <Column Name="IdTin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="IdChuyenMuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UrlAnhBia" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="UrlAnhNoiDung" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="TomTat" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="NoiDung" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
