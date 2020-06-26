@@ -23,6 +23,16 @@ body{
 }
 
 /* =================Container-News =============================*/
+.new-post-index-tt {
+    background: #BBBBBB;
+    padding: 5px;
+    padding-left: 10px;
+    
+    margin-bottom: 0px;
+}
+.new-post-index{
+    background: #e1e1e1;
+}
 .change-a a {
     text-decoration: none;
     color: black;
@@ -189,4 +199,48 @@ a {
 
 .tableLogin {
     padding-top:100px;
+}
+/*========footer=========*/
+footer {
+    background: #434d58;
+    color: #d8d0d0;
+    height: 270px;
+}
+footer .footer-bottom {
+background: #6e747b;
+color: #ffffff;
+height: 40px;
+text-align: center;
+/*    position: relative;
+top: 0px;*/
+padding: 10px;
+width: 100%;
+}
+footer .footer-content {
+height: 230px;
+display: flex;
+background: #434d58;
+color: #d8d0d0;
+}
+footer .footer-content .footer-section {
+    flex: 1;
+    padding-left: 15px;
+}
+footer .footer-content .footer-section .left{
+
+}
+footer .footer-content .footer-section .mid {
+
+}
+footer .footer-content .footer-section {
+    
+}
+.ft-img{
+    width: 50px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.ft-txt{
+    font-size: 14px;
 }
