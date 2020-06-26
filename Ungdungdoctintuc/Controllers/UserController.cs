@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Ungdungdoctintuc.Common;
 using Ungdungdoctintuc.CustomViewModel;
 using Ungdungdoctintuc.Models;
 
@@ -25,10 +24,6 @@ namespace Ungdungdoctintuc.Controllers
             if (ModelState.IsValid) {
 
                 var user = data.DocGias.SingleOrDefault(x => x.Username == model.UserName);
-
-                var userSession = new UserLogin();
-                userSession.UserName = user.Username;
-                userSession.UserId = user.IdDocGia;
 
                 Session["userId"] = user.IdDocGia;
                 Session["userName"] = user.Username;

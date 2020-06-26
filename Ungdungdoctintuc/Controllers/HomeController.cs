@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Ungdungdoctintuc.Common;
 using Ungdungdoctintuc.Models;
 
 namespace Ungdungdoctintuc.Controllers
@@ -159,7 +158,20 @@ namespace Ungdungdoctintuc.Controllers
             }
         }
 
+        public ActionResult LogOut() {
 
+            Session["userId"] = 0;
+            Session["userName"] = null;
+
+            return Redirect("/");
+        }
+
+        public ActionResult Search(string search)
+        {
+            var listSearch = data.Tins.Where(x => x.TieuDe.Contains(search) || x.NoiDung.Contains(search)).ToList();
+            ViewBag.search = search;
+            return View(listSearch);
+        }
 
     }
 }
