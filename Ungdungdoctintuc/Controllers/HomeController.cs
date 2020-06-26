@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using Ungdungdoctintuc.Models;
 
 namespace Ungdungdoctintuc.Controllers
@@ -11,10 +12,13 @@ namespace Ungdungdoctintuc.Controllers
     public class HomeController : Controller
     {
 
-       readonly DbTinTucDataContext data = new DbTinTucDataContext();
+      readonly DbTinTucDataContext data = new DbTinTucDataContext();
+      
 
         public object Chuyenmucs { get; private set; }
         public object Tins { get; private set; }
+
+       
 
         public ActionResult Index()
         {
@@ -36,7 +40,7 @@ namespace Ungdungdoctintuc.Controllers
         //Show tin theo chuyen muc GO
         public ActionResult ShowTinTheoTheLoai1()
         {
-            List<Tin> tins  = LayTinTheLoai(1);
+            List<Tin> tins = LayTinTheLoai(1);
             return PartialView(tins);
         }
         //Show tin theo chuyen muc Game OFFline
@@ -48,13 +52,13 @@ namespace Ungdungdoctintuc.Controllers
         //Show tin theo chuyen muc PC
         public ActionResult ShowTinTheoTheLoai3()
         {
-            List<Tin> tins  = LayTinTheLoai(3);
+            List<Tin> tins = LayTinTheLoai(3);
             return PartialView(tins);
         }
         //Show tin theo chuyen muc Esport
         public ActionResult ShowTinTheoTheLoai4()
         {
-            List<Tin> tins  = LayTinTheLoai(4);
+            List<Tin> tins = LayTinTheLoai(4);
             return PartialView(tins);
         }
         //============================ laasy tin theo chuyen muc================
@@ -102,6 +106,8 @@ namespace Ungdungdoctintuc.Controllers
             return View(tin.Single());
         }
 
+
+
         //CODE CATEGORY
 
         public List<Tin> LayTinTheoTheLoai(int id)
@@ -129,7 +135,7 @@ namespace Ungdungdoctintuc.Controllers
         public ActionResult ShowPart1Category1(int id)
         {
 
-            var category = LayTinTheoTheLoai(id);              
+            var category = LayTinTheoTheLoai(id);
             var category2 = category.OrderByDescending(m => m.NgayDang).Take(2).ToList();
             return PartialView(category2);
         }
@@ -137,15 +143,16 @@ namespace Ungdungdoctintuc.Controllers
         public ActionResult ShowPart2Category2(int id)
         {
             var category = LayTinTheoTheLoai(id);
-            var category2= category.OrderByDescending(m => m.NgayDang).Take(50).ToList();
+            var category2 = category.OrderByDescending(m => m.NgayDang).Take(50).ToList();
             var category3 = category2.Skip(2);
             return PartialView(category3);
         }
 
         // up cmt
         [HttpPost]
-        public ActionResult PostComment(string noiDung,int idTin)
+        public ActionResult PostComment(string noiDung, int idTin)
         {
+
             BinhLuan bl = new BinhLuan
             {
                 IdTin = idTin,
@@ -154,7 +161,25 @@ namespace Ungdungdoctintuc.Controllers
             };
             data.BinhLuans.InsertOnSubmit(bl);
             data.SubmitChanges();
-            return RedirectToAction("Details",new { id =bl.IdTin});
+            //return RedirectToAction("Details",new { id =bl.IdTin});
+
+            var userSession  = Convert.ToInt32(Session["userId"]);
+
+            if (userSession == 0)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            else
+            {
+        
+                bl.IdTin = idTin;
+                bl.NoiDung = noiDung;
+                bl.IdDocGia = userSession;
+                data.BinhLuans.InsertOnSubmit(bl);
+                data.SubmitChanges();
+                return RedirectToAction("Details", new { id = bl.IdTin });
+            }
+
         }
 
 

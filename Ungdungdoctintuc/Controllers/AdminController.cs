@@ -12,7 +12,10 @@ namespace Ungdungdoctintuc.Controllers
 {
     public class AdminController : Controller
     {
-        readonly DbTinTucDataContext data = new DbTinTucDataContext();
+         readonly DbTinTucDataContext data = new DbTinTucDataContext();
+
+       
+
         // GET: Admin
         public ActionResult Index()
         {
@@ -93,7 +96,9 @@ namespace Ungdungdoctintuc.Controllers
         {
             // lay ra tin theo id tin
             Tin tin = data.Tins.SingleOrDefault(n => n.IdTin == id);
-            if(tin==null)
+            ViewBag.IdChuyenMuc = new SelectList(data.ChuyenMucs.ToList().OrderBy(n => n.TenChuyenMuc), "IdChuyenMuc", "TenChuyenMuc");
+          
+            if (tin==null)
             {
                 Response.StatusCode = 404;
                 return null;
@@ -105,39 +110,10 @@ namespace Ungdungdoctintuc.Controllers
 
         [HttpPost, ActionName("Suatin")]
         [ValidateInput(false)]
-        public ActionResult Xacnhansuatin(Tin tin,int id)//,HttpPostedFileBase fileUpload
+        public ActionResult Xacnhansuatin(Tin tin,int id)
         {
 
-            //if (fileUpload == null)
-            //{
-            //    ViewBag.Thongbao = "vui long chon url anh bia";
-            //    return View();
-            //}
-            ////  add vao csdl
-            //else
-            //{
-            //    if (ModelState.IsValid)
-            //    {
-            //        // luu ten file,bo sung thu vien systemIO;
-            //        var fileName = Path.GetFileName(fileUpload.FileName);
-            //        //luu duong dan file
-            //        var path = Path.Combine(Server.MapPath("~/img"), fileName);
-            //        //Kiem tra hinh anh da ton tai chua?
-            //        if (System.IO.File.Exists(path))
-            //            ViewBag.Thongbao = "Hinh Anh Da Ton Tai";
-            //        else
-            //        {
-            //            fileUpload.SaveAs(path);
-            //        }
-            //        tin.UrlAnhBia = fileName;
-
-
-            //    }
-            //}
-            //tin.NgayDang = DateTime.Now;
-            //data.Tins.InsertOnSubmit(tin);
-            //data.SubmitChanges();
-            //return RedirectToAction("Tintuc");
+           
              tin = data.Tins.SingleOrDefault(n => n.IdTin == id);
             if (tin == null)
             {

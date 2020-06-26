@@ -33,6 +33,9 @@ namespace Ungdungdoctintuc.Models
     partial void InsertAdmin(Admin instance);
     partial void UpdateAdmin(Admin instance);
     partial void DeleteAdmin(Admin instance);
+    partial void InsertVote(Vote instance);
+    partial void UpdateVote(Vote instance);
+    partial void DeleteVote(Vote instance);
     partial void InsertBinhLuan(BinhLuan instance);
     partial void UpdateBinhLuan(BinhLuan instance);
     partial void DeleteBinhLuan(BinhLuan instance);
@@ -48,9 +51,6 @@ namespace Ungdungdoctintuc.Models
     partial void InsertTin(Tin instance);
     partial void UpdateTin(Tin instance);
     partial void DeleteTin(Tin instance);
-    partial void InsertVote(Vote instance);
-    partial void UpdateVote(Vote instance);
-    partial void DeleteVote(Vote instance);
     #endregion
 		
 		public DbTinTucDataContext() : 
@@ -91,6 +91,14 @@ namespace Ungdungdoctintuc.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Vote> Votes
+		{
+			get
+			{
+				return this.GetTable<Vote>();
+			}
+		}
+		
 		public System.Data.Linq.Table<BinhLuan> BinhLuans
 		{
 			get
@@ -128,14 +136,6 @@ namespace Ungdungdoctintuc.Models
 			get
 			{
 				return this.GetTable<Tin>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Vote> Votes
-		{
-			get
-			{
-				return this.GetTable<Vote>();
 			}
 		}
 	}
@@ -225,6 +225,246 @@ namespace Ungdungdoctintuc.Models
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vote")]
+	public partial class Vote : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdVote;
+		
+		private System.Nullable<int> _IdTin;
+		
+		private System.Nullable<int> _IdDocGia;
+		
+		private System.Nullable<bool> _Likee;
+		
+		private System.Nullable<bool> _DisLike;
+		
+		private EntityRef<DocGia> _DocGia;
+		
+		private EntityRef<Tin> _Tin;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdVoteChanging(int value);
+    partial void OnIdVoteChanged();
+    partial void OnIdTinChanging(System.Nullable<int> value);
+    partial void OnIdTinChanged();
+    partial void OnIdDocGiaChanging(System.Nullable<int> value);
+    partial void OnIdDocGiaChanged();
+    partial void OnLikeeChanging(System.Nullable<bool> value);
+    partial void OnLikeeChanged();
+    partial void OnDisLikeChanging(System.Nullable<bool> value);
+    partial void OnDisLikeChanged();
+    #endregion
+		
+		public Vote()
+		{
+			this._DocGia = default(EntityRef<DocGia>);
+			this._Tin = default(EntityRef<Tin>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVote", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdVote
+		{
+			get
+			{
+				return this._IdVote;
+			}
+			set
+			{
+				if ((this._IdVote != value))
+				{
+					this.OnIdVoteChanging(value);
+					this.SendPropertyChanging();
+					this._IdVote = value;
+					this.SendPropertyChanged("IdVote");
+					this.OnIdVoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTin", DbType="Int")]
+		public System.Nullable<int> IdTin
+		{
+			get
+			{
+				return this._IdTin;
+			}
+			set
+			{
+				if ((this._IdTin != value))
+				{
+					if (this._Tin.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdTinChanging(value);
+					this.SendPropertyChanging();
+					this._IdTin = value;
+					this.SendPropertyChanged("IdTin");
+					this.OnIdTinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdDocGia", DbType="Int")]
+		public System.Nullable<int> IdDocGia
+		{
+			get
+			{
+				return this._IdDocGia;
+			}
+			set
+			{
+				if ((this._IdDocGia != value))
+				{
+					if (this._DocGia.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdDocGiaChanging(value);
+					this.SendPropertyChanging();
+					this._IdDocGia = value;
+					this.SendPropertyChanged("IdDocGia");
+					this.OnIdDocGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Likee", DbType="Bit")]
+		public System.Nullable<bool> Likee
+		{
+			get
+			{
+				return this._Likee;
+			}
+			set
+			{
+				if ((this._Likee != value))
+				{
+					this.OnLikeeChanging(value);
+					this.SendPropertyChanging();
+					this._Likee = value;
+					this.SendPropertyChanged("Likee");
+					this.OnLikeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisLike", DbType="Bit")]
+		public System.Nullable<bool> DisLike
+		{
+			get
+			{
+				return this._DisLike;
+			}
+			set
+			{
+				if ((this._DisLike != value))
+				{
+					this.OnDisLikeChanging(value);
+					this.SendPropertyChanging();
+					this._DisLike = value;
+					this.SendPropertyChanged("DisLike");
+					this.OnDisLikeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_Vote", Storage="_DocGia", ThisKey="IdDocGia", OtherKey="IdDocGia", IsForeignKey=true)]
+		public DocGia DocGia
+		{
+			get
+			{
+				return this._DocGia.Entity;
+			}
+			set
+			{
+				DocGia previousValue = this._DocGia.Entity;
+				if (((previousValue != value) 
+							|| (this._DocGia.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DocGia.Entity = null;
+						previousValue.Votes.Remove(this);
+					}
+					this._DocGia.Entity = value;
+					if ((value != null))
+					{
+						value.Votes.Add(this);
+						this._IdDocGia = value.IdDocGia;
+					}
+					else
+					{
+						this._IdDocGia = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DocGia");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tin_Vote", Storage="_Tin", ThisKey="IdTin", OtherKey="IdTin", IsForeignKey=true)]
+		public Tin Tin
+		{
+			get
+			{
+				return this._Tin.Entity;
+			}
+			set
+			{
+				Tin previousValue = this._Tin.Entity;
+				if (((previousValue != value) 
+							|| (this._Tin.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tin.Entity = null;
+						previousValue.Votes.Remove(this);
+					}
+					this._Tin.Entity = value;
+					if ((value != null))
+					{
+						value.Votes.Add(this);
+						this._IdTin = value.IdTin;
+					}
+					else
+					{
+						this._IdTin = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tin");
 				}
 			}
 		}
@@ -659,9 +899,9 @@ namespace Ungdungdoctintuc.Models
 		
 		private string _Displayname;
 		
-		private EntitySet<BinhLuan> _BinhLuans;
-		
 		private EntitySet<Vote> _Votes;
+		
+		private EntitySet<BinhLuan> _BinhLuans;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -679,8 +919,8 @@ namespace Ungdungdoctintuc.Models
 		
 		public DocGia()
 		{
-			this._BinhLuans = new EntitySet<BinhLuan>(new Action<BinhLuan>(this.attach_BinhLuans), new Action<BinhLuan>(this.detach_BinhLuans));
 			this._Votes = new EntitySet<Vote>(new Action<Vote>(this.attach_Votes), new Action<Vote>(this.detach_Votes));
+			this._BinhLuans = new EntitySet<BinhLuan>(new Action<BinhLuan>(this.attach_BinhLuans), new Action<BinhLuan>(this.detach_BinhLuans));
 			OnCreated();
 		}
 		
@@ -764,19 +1004,6 @@ namespace Ungdungdoctintuc.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_BinhLuan", Storage="_BinhLuans", ThisKey="IdDocGia", OtherKey="IdDocGia")]
-		public EntitySet<BinhLuan> BinhLuans
-		{
-			get
-			{
-				return this._BinhLuans;
-			}
-			set
-			{
-				this._BinhLuans.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_Vote", Storage="_Votes", ThisKey="IdDocGia", OtherKey="IdDocGia")]
 		public EntitySet<Vote> Votes
 		{
@@ -787,6 +1014,19 @@ namespace Ungdungdoctintuc.Models
 			set
 			{
 				this._Votes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_BinhLuan", Storage="_BinhLuans", ThisKey="IdDocGia", OtherKey="IdDocGia")]
+		public EntitySet<BinhLuan> BinhLuans
+		{
+			get
+			{
+				return this._BinhLuans;
+			}
+			set
+			{
+				this._BinhLuans.Assign(value);
 			}
 		}
 		
@@ -810,18 +1050,6 @@ namespace Ungdungdoctintuc.Models
 			}
 		}
 		
-		private void attach_BinhLuans(BinhLuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.DocGia = this;
-		}
-		
-		private void detach_BinhLuans(BinhLuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.DocGia = null;
-		}
-		
 		private void attach_Votes(Vote entity)
 		{
 			this.SendPropertyChanging();
@@ -829,6 +1057,18 @@ namespace Ungdungdoctintuc.Models
 		}
 		
 		private void detach_Votes(Vote entity)
+		{
+			this.SendPropertyChanging();
+			entity.DocGia = null;
+		}
+		
+		private void attach_BinhLuans(BinhLuan entity)
+		{
+			this.SendPropertyChanging();
+			entity.DocGia = this;
+		}
+		
+		private void detach_BinhLuans(BinhLuan entity)
 		{
 			this.SendPropertyChanging();
 			entity.DocGia = null;
@@ -973,9 +1213,9 @@ namespace Ungdungdoctintuc.Models
 		
 		private string _TacGia;
 		
-		private EntitySet<BinhLuan> _BinhLuans;
-		
 		private EntitySet<Vote> _Votes;
+		
+		private EntitySet<BinhLuan> _BinhLuans;
 		
 		private EntityRef<ChuyenMuc> _ChuyenMuc;
 		
@@ -1005,8 +1245,8 @@ namespace Ungdungdoctintuc.Models
 		
 		public Tin()
 		{
-			this._BinhLuans = new EntitySet<BinhLuan>(new Action<BinhLuan>(this.attach_BinhLuans), new Action<BinhLuan>(this.detach_BinhLuans));
 			this._Votes = new EntitySet<Vote>(new Action<Vote>(this.attach_Votes), new Action<Vote>(this.detach_Votes));
+			this._BinhLuans = new EntitySet<BinhLuan>(new Action<BinhLuan>(this.attach_BinhLuans), new Action<BinhLuan>(this.detach_BinhLuans));
 			this._ChuyenMuc = default(EntityRef<ChuyenMuc>);
 			OnCreated();
 		}
@@ -1195,19 +1435,6 @@ namespace Ungdungdoctintuc.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tin_BinhLuan", Storage="_BinhLuans", ThisKey="IdTin", OtherKey="IdTin")]
-		public EntitySet<BinhLuan> BinhLuans
-		{
-			get
-			{
-				return this._BinhLuans;
-			}
-			set
-			{
-				this._BinhLuans.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tin_Vote", Storage="_Votes", ThisKey="IdTin", OtherKey="IdTin")]
 		public EntitySet<Vote> Votes
 		{
@@ -1218,6 +1445,19 @@ namespace Ungdungdoctintuc.Models
 			set
 			{
 				this._Votes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tin_BinhLuan", Storage="_BinhLuans", ThisKey="IdTin", OtherKey="IdTin")]
+		public EntitySet<BinhLuan> BinhLuans
+		{
+			get
+			{
+				return this._BinhLuans;
+			}
+			set
+			{
+				this._BinhLuans.Assign(value);
 			}
 		}
 		
@@ -1275,18 +1515,6 @@ namespace Ungdungdoctintuc.Models
 			}
 		}
 		
-		private void attach_BinhLuans(BinhLuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tin = this;
-		}
-		
-		private void detach_BinhLuans(BinhLuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tin = null;
-		}
-		
 		private void attach_Votes(Vote entity)
 		{
 			this.SendPropertyChanging();
@@ -1298,245 +1526,17 @@ namespace Ungdungdoctintuc.Models
 			this.SendPropertyChanging();
 			entity.Tin = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vote")]
-	public partial class Vote : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdVote;
-		
-		private System.Nullable<int> _IdTin;
-		
-		private System.Nullable<int> _IdDocGia;
-		
-		private System.Nullable<bool> _Likee;
-		
-		private System.Nullable<bool> _DisLike;
-		
-		private EntityRef<DocGia> _DocGia;
-		
-		private EntityRef<Tin> _Tin;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdVoteChanging(int value);
-    partial void OnIdVoteChanged();
-    partial void OnIdTinChanging(System.Nullable<int> value);
-    partial void OnIdTinChanged();
-    partial void OnIdDocGiaChanging(System.Nullable<int> value);
-    partial void OnIdDocGiaChanged();
-    partial void OnLikeeChanging(System.Nullable<bool> value);
-    partial void OnLikeeChanged();
-    partial void OnDisLikeChanging(System.Nullable<bool> value);
-    partial void OnDisLikeChanged();
-    #endregion
-		
-		public Vote()
+		private void attach_BinhLuans(BinhLuan entity)
 		{
-			this._DocGia = default(EntityRef<DocGia>);
-			this._Tin = default(EntityRef<Tin>);
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.Tin = this;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVote", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdVote
+		private void detach_BinhLuans(BinhLuan entity)
 		{
-			get
-			{
-				return this._IdVote;
-			}
-			set
-			{
-				if ((this._IdVote != value))
-				{
-					this.OnIdVoteChanging(value);
-					this.SendPropertyChanging();
-					this._IdVote = value;
-					this.SendPropertyChanged("IdVote");
-					this.OnIdVoteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdTin", DbType="Int")]
-		public System.Nullable<int> IdTin
-		{
-			get
-			{
-				return this._IdTin;
-			}
-			set
-			{
-				if ((this._IdTin != value))
-				{
-					if (this._Tin.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIdTinChanging(value);
-					this.SendPropertyChanging();
-					this._IdTin = value;
-					this.SendPropertyChanged("IdTin");
-					this.OnIdTinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdDocGia", DbType="Int")]
-		public System.Nullable<int> IdDocGia
-		{
-			get
-			{
-				return this._IdDocGia;
-			}
-			set
-			{
-				if ((this._IdDocGia != value))
-				{
-					if (this._DocGia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIdDocGiaChanging(value);
-					this.SendPropertyChanging();
-					this._IdDocGia = value;
-					this.SendPropertyChanged("IdDocGia");
-					this.OnIdDocGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Likee", DbType="Bit")]
-		public System.Nullable<bool> Likee
-		{
-			get
-			{
-				return this._Likee;
-			}
-			set
-			{
-				if ((this._Likee != value))
-				{
-					this.OnLikeeChanging(value);
-					this.SendPropertyChanging();
-					this._Likee = value;
-					this.SendPropertyChanged("Likee");
-					this.OnLikeeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisLike", DbType="Bit")]
-		public System.Nullable<bool> DisLike
-		{
-			get
-			{
-				return this._DisLike;
-			}
-			set
-			{
-				if ((this._DisLike != value))
-				{
-					this.OnDisLikeChanging(value);
-					this.SendPropertyChanging();
-					this._DisLike = value;
-					this.SendPropertyChanged("DisLike");
-					this.OnDisLikeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_Vote", Storage="_DocGia", ThisKey="IdDocGia", OtherKey="IdDocGia", IsForeignKey=true)]
-		public DocGia DocGia
-		{
-			get
-			{
-				return this._DocGia.Entity;
-			}
-			set
-			{
-				DocGia previousValue = this._DocGia.Entity;
-				if (((previousValue != value) 
-							|| (this._DocGia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DocGia.Entity = null;
-						previousValue.Votes.Remove(this);
-					}
-					this._DocGia.Entity = value;
-					if ((value != null))
-					{
-						value.Votes.Add(this);
-						this._IdDocGia = value.IdDocGia;
-					}
-					else
-					{
-						this._IdDocGia = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("DocGia");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tin_Vote", Storage="_Tin", ThisKey="IdTin", OtherKey="IdTin", IsForeignKey=true)]
-		public Tin Tin
-		{
-			get
-			{
-				return this._Tin.Entity;
-			}
-			set
-			{
-				Tin previousValue = this._Tin.Entity;
-				if (((previousValue != value) 
-							|| (this._Tin.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tin.Entity = null;
-						previousValue.Votes.Remove(this);
-					}
-					this._Tin.Entity = value;
-					if ((value != null))
-					{
-						value.Votes.Add(this);
-						this._IdTin = value.IdTin;
-					}
-					else
-					{
-						this._IdTin = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tin");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			this.SendPropertyChanging();
+			entity.Tin = null;
 		}
 	}
 }

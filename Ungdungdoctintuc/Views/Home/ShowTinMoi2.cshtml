@@ -3,9 +3,9 @@
 @foreach (var item in Model)
 {
     <div class="col-sm-4 pt-1 px-1" style="float: left;">
-        <div class="px-5 bg-light">
+        <div class="px-5 bg-light " >
             <a href="@Url.Action("Details","Home",new { id=item.IdTin})">
-                <h6>@item.TieuDe</h6>
+                <h5 class="title-design">@item.TieuDe</h5>
             </a>
             <p>
                @Html.Raw(@item.TomTat)
