@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Ungdungdoctintuc.Models.Tin>
+@{
+    ViewBag.Title = "Search";
+    String search = ViewBag.search;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div style="margin-top:30px">
+        <h2>Tìm kiếm với từ khóa : @search</h2>
+        @foreach (var item in Model)
+        {
+            <li class="list-content">
+                <div class="list-content-img">
+                    <img src="@Url.Content(item.UrlAnhBia)">
+                </div>
+                <div class="list-content-title">
+                    <h4>@item.TieuDe</h4>
+                    <p>@item.TomTat!</p>
+                    <!-- <span class="timeago" title="5/21/2020 12:00:00 AM"></span> -->
+                    <time class="timeago" title="@item.NgayDang">@item.NgayDang</time>
+                </div>
+            </li>
+        }
+    </div>
