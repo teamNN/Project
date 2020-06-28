@@ -28,7 +28,7 @@
 
 
 <body>
- 
+
     <div class="container">
         <div class="row">
 
@@ -44,7 +44,7 @@
         <br>
         <div class="col-sm-8">
             <div class="top-detail">
-                <h3 style="text-align:center">@Model.TieuDe </h3>
+                <h3 style="text-align:justify">@Model.TieuDe </h3>
                 <br>
             </div>
         </div>
@@ -56,7 +56,7 @@
 
                 <div class="left-detail">
                     <p class="name-box">Tin lien quan </p>
-                    <a href="#"><div class="left-title">Tham tu Cao Ngoc Nguyen bui bui</div> </a>
+                    <a href="#"><div class="left-title">Omg</div> </a>
                     <br>
                     <a href=""><img src="~/img/hoang.jpg" class="left-img"></a>
                     <div class="left-content">123 Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
@@ -64,26 +64,21 @@
                 </div>
             </div>
             <!-- Main content -->
-            <div class="col-sm-6">
-                <p style="text-align:justify"><span style="font-weight:bold"></span>@Html.Raw(@Model.NoiDung)</p>
+            <div class="col-sm-7" style="text-align:justify">
+                <p><span style="font-weight:bold"></span>@Html.Raw(@Model.NoiDung)</p>
+                @*<img src="@Model.UrlAnhNoiDung" alt="Alternate Text" class="img-nd" />*@
                 <br>
                 <hr>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="width:25%">Người đăng</th>
-                            <th style="width:75%">Nội dung</th>                           
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach(var item in bl) {
-                        <tr>
-                            <td>@item.DocGia.Username</td>
-                            <td>@item.NoiDung</td>
-                        </tr>
-                        }
-                    </tbody>
-                </table>
+
+                @foreach (var item in bl)
+                {
+                    <div class="full-comment">
+                        <div class="user-cmt"><b> @item.DocGia.Username </b></div>
+                        <div class="cmt-content"> @item.NoiDung</div>
+                        <br />
+                    </div>
+                }
+
                 <div class="cmt">
                     <h5>Hãy để lại bình luận của bạn</h5>
                     @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
@@ -97,8 +92,8 @@
                 </div>
             </div>
             <!-- Left content -->
-            <div class="col-sm-4">
-                <h2>Quang cao here</h2>
+            <div class="col-sm-3">
+                <h2>Banner</h2>
             </div>
 
 

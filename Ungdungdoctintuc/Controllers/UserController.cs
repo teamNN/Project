@@ -32,8 +32,12 @@ namespace Ungdungdoctintuc.Controllers
 
                 Session["userId"] = user.IdDocGia;
                 Session["userName"] = user.Username;
-
-                return RedirectToAction("Index", "Home");
+                if (Session["idDetails"] == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    return RedirectToAction("Details", "Home", new { id = Session["idDetails"] });
             }
             return View(model);
         }

@@ -98,6 +98,8 @@ namespace Ungdungdoctintuc.Controllers
         //hàm click vào xem nội dung chi tiết tin tức theo id của tin đó
         public ActionResult Details(int id)
         {
+            Session["idDetails"] = id;
+
             var tin = from t in data.Tins where t.IdTin == id select t;
 
             var listCmt = data.BinhLuans.Where(x => x.IdTin == id).ToList();
@@ -153,14 +155,14 @@ namespace Ungdungdoctintuc.Controllers
         public ActionResult PostComment(string noiDung, int idTin)
         {
 
-            BinhLuan bl = new BinhLuan
-            {
-                IdTin = idTin,
-                NoiDung = noiDung,
-                IdDocGia = 1
-            };
-            data.BinhLuans.InsertOnSubmit(bl);
-            data.SubmitChanges();
+            BinhLuan bl = new BinhLuan();
+            //{
+            //    IdTin = idTin,
+            //    NoiDung = noiDung,
+            //    IdDocGia = 1
+            //};
+            //data.BinhLuans.InsertOnSubmit(bl);
+            //data.SubmitChanges();
             //return RedirectToAction("Details",new { id =bl.IdTin});
 
             var userSession  = Convert.ToInt32(Session["userId"]);

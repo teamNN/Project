@@ -2,16 +2,25 @@
 
 @foreach(var item in Model)
 {
-    <li class="list-content">
-        <div class="list-content-img">
-            <img src="@Url.Content(item.UrlAnhBia)">
-        </div>
-        <div class="list-content-title">
-            <h4>@item.TieuDe</h4>
-            <p>@item.TomTat!</p>
-            <!-- <span class="timeago" title="5/21/2020 12:00:00 AM"></span> -->
-            <time class="timeago" datetime="2020-05-30T13:35:17Z" title="30 tháng 5 2020">@item.NgayDang</time>
-        </div>
-    </li>
+    
+
+
+        
+            <div class="list-content">
+                <div class="list-content-img">
+                    <a href="@Url.Action("Details","Home",new { id=item.IdTin})"><img src="@Url.Content(item.UrlAnhBia)"></a>
+                </div>
+                <div class="list-content-title">
+                    <a href="@Url.Action("Details","Home",new { id=item.IdTin})" style="color:black">
+                        @item.TieuDe
+                    </a>
+                    <p style="color:gray">@Html.Raw(@item.TomTat!)</p>
+                    <!-- <span class="timeago" title="5/21/2020 12:00:00 AM"></span> -->
+                    <time class="timeago" datetime="2020-05-30T13:35:17Z" title="30 tháng 5 2020">@item.NgayDang</time>
+                </div>
+            </div>
+        
+
+   
 }
 

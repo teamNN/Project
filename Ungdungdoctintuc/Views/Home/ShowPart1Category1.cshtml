@@ -4,9 +4,7 @@
 @foreach (var item in Model)
 {
     <div class="col-sm-4">
-
-        <a href="#"><img src="@Url.Content(item.UrlAnhBia)" width="100%" height="250px"></a>
-        <a href="#">@item.TieuDe</a>
+        <a href="@Url.Action("Details","Home",new { id=item.IdTin})"><img src="@Url.Content(item.UrlAnhBia)" class="img-new-cat"></a>
+        <a href="@Url.Action("Details","Home",new { id=item.IdTin})" class="tit-new-cat text-decoration-none">@item.TieuDe</a>
     </div>
-
 }

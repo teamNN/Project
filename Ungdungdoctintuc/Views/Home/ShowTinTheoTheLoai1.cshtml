@@ -5,24 +5,25 @@
 
 @foreach (var item in Model)
 {
-    <div class="col-sm-6">
-        <div class="row">
-            <div class="col-sm-5" style="float: left;">
-                <a href="#">
+    
+        <div class="row px-0 py-1 border-bottom">
+            <div class="col-sm-3">
+                <a href="@Url.Action("Details","Home",new { id=item.IdTin})">
                     <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news-part3" />
                 </a>
             </div>
-            <div class="col-sm-7 px-4" style="float: left;">
+            <div class="col-sm-9 px-4">
                 <a href="@Url.Action("Details","Home",new { id=item.IdTin})">
-                    <h5>@item.TieuDe</h5>
+                    <h5 class="title-design">@item.TieuDe</h5>
                 </a>
 
-                <p>
-                   @Html.Raw(@item.TomTat)
-                </p>
+                <h2>
+                    @Html.Raw(@item.TomTat)
+                </h2>
             </div>
         </div>
-    </div>
+
+    
 }
 
 

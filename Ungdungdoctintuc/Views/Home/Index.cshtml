@@ -7,118 +7,127 @@
     var urlhinh = (string)ViewBag.UrlHinh;
 }
 
-    <div class="container pt-5 change-a">
-        <!-- phần 1 -->
-        
-        <div class="container">
-            <h3 class="new-post-index-tt">
-                Tin mới
-            </h3>
+
+<!-- phần 1 -->
+
+<div class="container bg-white">
+    <div class="row-1">
+        <h3 class="new-post-index-tt">
+            TIN MỚI NHẤT
+        </h3>
+        @foreach (var item in Model)
+        {
+            <div class="row row-2 m-0 big-new">
+                <div class="col-sm-4 p-0 ">
+                    <a href="@Url.Action("Details", "Home", new { id = item.IdTin })">
+                        <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news" />
+                    </a>
+                </div>
+                <div class="col-sm-8">
+
+                    <a href="@Url.Action("Details","Home",new { id=item.IdTin})" class="link-news">
+                        <h4 class="title-design">
+                            @item.TieuDe
+                        </h4>
+                    </a>
+                    <p class="tit-img-cat">
+                        @Html.Raw(@item.TomTat)
+                    </p>
+
+                </div>
+            </div>
+        }
+
+        <div class="triple-news">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="row">
-                        @foreach (var item in Model)
-                        {
-                            <div class="col-sm-4 ">
-                                <a href="#">
-                                    <img src="@Url.Content(item.UrlAnhBia)" alt="tin-tuc" class="img-news" />
-                                </a>
-                            </div>
-                            <div class="col-sm-8 new-post-index">
-                                <a href="@Url.Action("Details","Home",new { id=item.IdTin})" class="link-news">
-                                    <h4>
-                                        @item.TieuDe
-                                    </h4>
-                                </a>
-                                <p>
-                                    @Html.Raw(@item.TomTat)
-                                </p>
-                            </div>
-                        }
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- phần 2 -->
-        <div class="container">
-            <div class="row part-2">
-                <div class="col-sm-12">
-                    <div class="row">
-                        @Html.Action("ShowTinMoi2", "Home")
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- phần 3 -->
-        <div class="container">
-            <div class="part-padding change-a">
-                <div class="row p-2" style="background-color: #e74c3c;">
-                    <a href="#">
-                        <h4>Game Online</h4>
-                    </a>
-                    <div class="row">
-
-                        @Html.Action("ShowTinTheoTheLoai1", "Home")
-                    </div>
-                </div>
-            </div>
-        </div>
-
-      
-
-
-
-        <!-- phần 4 -->
-        <div class="container">
-            <div class="part-padding change-a">
-                <div class="row p-2" style="background-color: #e74c3c;">
-                    <a href="#">
-                        <h4>Game Offline</h4>
-                    </a>
-
-                    <div class="row">
-                        @Html.Action("ShowTinTheoTheLoai2", "Home")
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- phần 5 -->
-
-        <div class="container">
-            <div class="part-padding change-a">
-                <div class="row p-2" style="background-color: #e74c3c;">
-                    <a href="#">
-                        <h4>PC/Console</h4>
-                    </a>
-
-                    <div class="row">
-                        @Html.Action("ShowTinTheoTheLoai3", "Home")
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- phần 6 -->
-        <div class="container">
-            <div class="part-padding change-a">
-                <div class="row p-2" style="background-color: #e74c3c;">
-                    <a href="#">
-                        <h4>Esport</h4>
-                    </a>
-
-                    <div class="row">
-                        @Html.Action("ShowTinTheoTheLoai4", "Home")
-                    </div>
-                </div>
+                @Html.Action("ShowTinMoi2", "Home")
             </div>
         </div>
     </div>
+
+
+
+
+
+    <!-- Game Online -->
+    <a href="#">
+        <h4 class="index-cat-tt">Game Online</h4>
+    </a>
+    <div class="row">
+        <div class="col-sm-12 ">
+            @Html.Action("ShowTinTheoTheLoai1", "Home")
+        </div>
+    </div>
+    <!-- Game Offline -->
+    <a href="#">
+        <h4 class="index-cat-tt">Game Offline</h4>
+    </a>
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.Action("ShowTinTheoTheLoai2", "Home")
+        </div>
+    </div>
+    <!-- Game Console -->
+    <a href="#">
+        <h4 class="index-cat-tt">Game Console</h4>
+    </a>
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.Action("ShowTinTheoTheLoai3", "Home")
+        </div>
+    </div>
+    <!-- Esport -->
+    <a href="#">
+        <h4 class="index-cat-tt">Tin Esport</h4>
+    </a>
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.Action("ShowTinTheoTheLoai4", "Home")
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="row">
+            @Html.Action("ShowTinMoi2", "Home")
+        </div>
+
+
+
+
+
+
+         phần 3
+        <div class="row">
+            <a href="#">
+                <h4>Game Online</h4>
+            </a>
+
+
+            @Html.Action("ShowTinTheoTheLoai1", "Home")
+        </div>
+
+
+    </div>*@
+
+
 
 
